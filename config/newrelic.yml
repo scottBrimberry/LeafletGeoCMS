@@ -3,7 +3,7 @@
 # Ruby, Java, .NET, PHP, and Python applications with deep visibility and low overhead.
 # For more information, visit www.newrelic.com.
 #
-# Generated September 13, 2012
+# Generated October 29, 2012
 #
 # This configuration file is custom generated for Dotgee_1
 
@@ -15,7 +15,6 @@ common: &default_settings
   # account.  This key binds your Agent's data to your account in the
   # New Relic service.
   license_key: 'ced0515f1ef8412c77eb13ad928ade5183b98fad'
-
   # Agent Enabled (Ruby/Rails Only)
   # Use this setting to force the agent to run or not run.
   # Default is 'auto' which means the agent will install and run only
@@ -23,7 +22,7 @@ common: &default_settings
   # it from running with Rake or the console.  Set to false to
   # completely turn the agent off regardless of the other settings.
   # Valid values are true, false and auto.
-  agent_enabled: true
+  # agent_enabled: auto
   
   # Application Name
   # Set this to be the name of your application as you'd like it show
@@ -33,7 +32,7 @@ common: &default_settings
   # "All UI" then specify a semicolon-separated list of up to three
   # distinct names.  If you comment this out, it defaults to the 
   # capitalized RAILS_ENV (i.e., Production, Staging, etc)
-  app_name: GeoCMS - Dev
+  app_name: GeoCMS
 
   # When "true", the agent collects performance data about your 
   # application and reports this data to the New Relic service at
@@ -43,7 +42,7 @@ common: &default_settings
 
   # Developer mode should be off in every environment but
   # development as it has very high overhead in memory.
-  developer_mode: true
+  developer_mode: false
 
   # The newrelic agent generates its own log file to keep its logging
   # information separate from that of your application.  Specify its
@@ -80,7 +79,6 @@ common: &default_settings
   # For more about the Apdex standard, see
   # http://newrelic.com/docs/general/apdex
   apdex_t: 0.5
-
   # Proxy settings for connecting to the New Relic server.
   #
   # If a proxy is used, the host setting is required.  Other settings
@@ -192,7 +190,7 @@ development:
   # 'enabled').
   # NOTE: for initial evaluation purposes, you may want to temporarily 
   # turn agent communication on in development mode.
-  monitor_mode: false
+  monitor_mode: true
 
   # Rails Only - when running in Developer Mode, the New Relic Agent will 
   # present performance information on the last 100 transactions you have
