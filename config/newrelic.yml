@@ -22,8 +22,8 @@ common: &default_settings
   # it from running with Rake or the console.  Set to false to
   # completely turn the agent off regardless of the other settings.
   # Valid values are true, false and auto.
-  # agent_enabled: auto
-  
+  agent_enabled: true
+
   # Application Name
   # Set this to be the name of your application as you'd like it show
   # up in New Relic.  New Relic will then auto-map instances of your application
@@ -42,7 +42,7 @@ common: &default_settings
 
   # Developer mode should be off in every environment but
   # development as it has very high overhead in memory.
-  developer_mode: false
+  developer_mode: true
 
   # The newrelic agent generates its own log file to keep its logging
   # information separate from that of your application.  Specify its
@@ -132,11 +132,11 @@ common: &default_settings
     # Determines whether the agent will capture query plans for slow
     # SQL queries.  Only supported in mysql and postgres.  Should be
     # set to false when using other adapters.
-    # explain_enabled: true
+    explain_enabled: true
 
     # Threshold for query execution time below which query plans will not 
     # not be captured.  Relevant only when `explain_enabled` is true.
-    # explain_threshold: 0.5
+    explain_threshold: 0.5
   
   # Error collector captures information about uncaught exceptions and
   # sends them to New Relic for viewing
@@ -188,9 +188,11 @@ development:
   <<: *default_settings
   # Turn off communication to New Relic service in development mode (also
   # 'enabled').
+  agent_enabled: true
+
   # NOTE: for initial evaluation purposes, you may want to temporarily 
   # turn agent communication on in development mode.
-  monitor_mode: true
+  monitor_mode: false
 
   # Rails Only - when running in Developer Mode, the New Relic Agent will 
   # present performance information on the last 100 transactions you have
